@@ -8,14 +8,23 @@ var ClippedText = (function () {
 
     ClippedText.prototype.clipToggle = function () {
         if (this.isClipped) {
-            this.textElement.innerHTML = this._originalText;
-            this.isClipped = false;
+            this.showAll();
         } else {
-            _trimApproximately.call(this);
-            _clarifyText.call(this);
-            _addDots.call(this, this.textElement);
-            this.isClipped = true;
+            this.clip();
         }
+    }
+
+    ClippedText.prototype.showAll = function () {
+        this.textElement.innerHTML = this._originalText;
+        this.isClipped = false;
+    }
+
+
+    ClippedText.prototype.clip = function () {
+        _trimApproximately.call(this);
+        _clarifyText.call(this);
+        _addDots.call(this, this.textElement);
+        this.isClipped = true;
     }
 
 
@@ -59,8 +68,8 @@ var ClippedText = (function () {
         var lastTag = regex.exec(element.innerHTML);
         var cutCount = lastTag ? (lastTag[0].length + 4) : 4;
         tempElement.innerHTML = element.innerHTML.slice(0, element.innerHTML.length - cutCount)
-        .concat('...')
-        .concat(lastTag ? lastTag[0] : '');
+            .concat('...')
+            .concat(lastTag ? lastTag[0] : '');
         textParentElement.appendChild(tempElement);
         this.textElement = tempElement;
     }
@@ -69,9 +78,9 @@ var ClippedText = (function () {
         return element.offsetTop - element.parentElement.offsetTop;
     }
 
-    ClippedText.init = function(){
+    ClippedText.init = function () {
         var clippedElements = document.querySelectorAll('[data-clip]');
-        for(var i = 0; i < clippedElements.length; i++){
+        for (var i = 0; i < clippedElements.length; i++) {
             ClippedText.clippedElements.push(new ClippedText(clippedElements[i]));
         }
     }

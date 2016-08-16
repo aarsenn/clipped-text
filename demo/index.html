@@ -17,7 +17,11 @@
 </head>
 
 <body>
-    <h1>Before parent element</h1>
+    <div>
+        <h1>Before parent element</h1>
+        <button onclick="clipAll()">Clip All Toggle</button>
+    </div>
+
     <div class="parent" style="float:left">
         <h1>Before text element</h1>
         <button onclick="toggle(ClippedText.clippedElements[0])">Toggle</button>
@@ -760,7 +764,7 @@
     <div class="parent" style="float:left">
         <button onclick="toggle(ClippedText.clippedElements[2])">Toggle</button>
         <p class="text" data-clip>
-            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
             of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
             Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
             of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
@@ -820,7 +824,7 @@
             of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
             Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
             of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
-            Alot of text Alot of text
+            Alot of text
         </p>
     </div>
     <script src="../clipped-text.js"></script>
@@ -833,6 +837,13 @@
 
         function toggle(el){
             el.clipToggle();
+        }
+
+        function clipAll(){
+            var elArr = ClippedText.clippedElements;
+            for(var i = 0; i < elArr.length; i++){
+                elArr[i].clipToggle();
+            }
         }
     </script>
 </body>
