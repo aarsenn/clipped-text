@@ -1,14 +1,14 @@
 var ClippedText = (function () {
     function ClippedText(element) {
         if (!(element instanceof HTMLElement)) throw new Error('Bad argument in ClippedText');
-        this._originalText = element.innerText;
+        this._originalText = element.innerHTML;
         this.textElement = element;
         this.isClipped = false;
     }
 
     ClippedText.prototype.clipToggle = function () {
         if (this.isClipped) {
-            this.textElement.innerText = this._originalText;
+            this.textElement.innerHTML = this._originalText;
             this.isClipped = false;
         } else {
             _trimApproximately.call(this);
@@ -26,9 +26,9 @@ var ClippedText = (function () {
             var tempTextElement = this.textElement.cloneNode();
             var parentHeight = textParentElement.clientHeight;
             textParentElement.removeChild(this.textElement);
-            this._lastCharacterIndex = this.textElement.innerText.length;
+            this._lastCharacterIndex = this.textElement.innerHTML.length;
             var approximatelyCharacterCount = this._lastCharacterIndex / (this.bottomEdge / parentHeight);
-            tempTextElement.innerText = this.textElement.innerText.slice(0, approximatelyCharacterCount);
+            tempTextElement.innerHTML = this.textElement.innerHTML.slice(0, approximatelyCharacterCount);
             textParentElement.appendChild(tempTextElement);
             this.textElement = tempTextElement;
             this.bottomEdge = this.textElement.offsetHeight + _getRelativeTop(this.textElement);
@@ -38,11 +38,11 @@ var ClippedText = (function () {
     function _clarifyText() {
         var textParentElement = this.textElement.parentElement;
         this.bottomEdge = this.textElement.offsetHeight + _getRelativeTop(this.textElement);
-        this._lastCharacterIndex = this.textElement.innerText.length;
+        this._lastCharacterIndex = this.textElement.innerHTML.length;
         while (this.bottomEdge <= textParentElement.clientHeight) {
             if (this._originalText.length <= this._lastCharacterIndex) break;
             var tempTextElement = this.textElement.cloneNode();
-            tempTextElement.innerText = this._originalText.slice(0, this._lastCharacterIndex);
+            tempTextElement.innerHTML = this._originalText.slice(0, this._lastCharacterIndex);
             textParentElement.removeChild(this.textElement);
             textParentElement.appendChild(tempTextElement);
             this._lastCharacterIndex++;
@@ -55,7 +55,12 @@ var ClippedText = (function () {
         var textParentElement = element.parentElement;
         var tempElement = element.cloneNode();
         textParentElement.removeChild(element);
-        tempElement.innerText = element.innerText.slice(0, element.innerText.length - 4).concat('...');
+        var regex = /(<\/\w+?>)+?$/;
+        var lastTag = regex.exec(element.innerHTML);
+        var cutCount = lastTag ? (lastTag[0].length + 4) : 4;
+        tempElement.innerHTML = element.innerHTML.slice(0, element.innerHTML.length - cutCount)
+        .concat('...')
+        .concat(lastTag ? lastTag[0] : '');
         textParentElement.appendChild(tempElement);
         this.textElement = tempElement;
     }

@@ -11,24 +11,17 @@
             border: 2px solid;
             padding: 5px;
             border-radius: 10px;
+            margin: 10px;
         }
     </style>
-    <script src="../index.js"></script>
-    <script>
-        var clippedText = null;
-        window.onload = function(){
-            ClippedText.init();
-        }
-
-        function toggle(el){
-            el.clipToggle();
-        }
-    </script>
 </head>
 
 <body>
-    <div class="parent">
+    <h1>Before parent element</h1>
+    <div class="parent" style="float:left">
+        <h1>Before text element</h1>
         <button onclick="toggle(ClippedText.clippedElements[0])">Toggle</button>
+        <h2>Before text element too</h2>
         <p class="text" data-clip>
             Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
             of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
@@ -643,6 +636,205 @@
             Alot of text Alot of text Alot of text Alot of text
         </p>
     </div>
+    <div class="parent" style="float:left">
+        <button onclick="toggle(ClippedText.clippedElements[1])">Toggle</button>
+        <p class="text" data-clip>
+            <span style="font-size: 24px">Hello</span>
+            <span style="font-size: 13px">Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot</span>            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text
+        </p>
+    </div>
+    <div class="parent" style="float:left">
+        <button onclick="toggle(ClippedText.clippedElements[2])">Toggle</button>
+        <p class="text" data-clip>
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot
+            of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text Alot of text
+            Alot of text Alot of text
+        </p>
+    </div>
+    <script src="../clipped-text.js"></script>
+    <script>
+        var clippedText = null;
+
+        window.onload = function(){
+            ClippedText.init();
+        }
+
+        function toggle(el){
+            el.clipToggle();
+        }
+    </script>
 </body>
 
 </html>
